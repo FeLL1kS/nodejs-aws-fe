@@ -99,7 +99,7 @@ const Form = (props: FormikProps<FormikValues>) => {
 }
 
 export default function PageOrder() {
-  const {id} = useParams();
+  const {id} = useParams<{ id?: string | undefined; }>();
   const [order, setOrder] = useState<any>({});
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -115,7 +115,7 @@ export default function PageOrder() {
       return;
     }
     const promises: any[] = [
-      axios.get(`${API_PATHS.product}/product`),
+      axios.get(`${API_PATHS.product}/products-list`),
       axios.get(`${API_PATHS.order}/order/${id}`)
     ];
     Promise.all(promises)

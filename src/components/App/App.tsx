@@ -3,7 +3,7 @@ import 'components/App/App.css';
 import PageProducts from "components/pages/PageProducts/PageProducts";
 import MainLayout from "components/MainLayout/MainLayout";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
